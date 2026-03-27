@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>All-in-One STL Bundle – Bitscrafts</title>
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/Untitled_design_10.png">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+
+    /* === BACKGROUND TILE === */
+    body{
+      background-color:#C0C0C0;
+      background-image:linear-gradient(45deg,#b8b8b8 25%,transparent 25%),linear-gradient(-45deg,#b8b8b8 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#b8b8b8 75%),linear-gradient(-45deg,transparent 75%,#b8b8b8 75%);
+      background-size:4px 4px;
+      background-position:0 0,0 2px,2px -2px,-2px 0px;
+      color:#000000;
+      font-family:"MS Sans Serif","Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
+      font-size:14px;
+      line-height:1.5;
+      overflow-x:hidden;
+    }
+    img{display:block;max-width:100%;height:auto;}
+    ul{list-style:none;}
+
+    /* === ANIMATIONS === */
+    @keyframes rainbow{0%{color:#ff0000;}17%{color:#ff8000;}33%{color:#ffff00;}50%{color:#00cc00;}67%{color:#0080ff;}83%{color:#8000ff;}100%{color:#ff0000;}}
+    @keyframes blink{0%,49%{opacity:1;}50%,100%{opacity:0;}}
+    @keyframes pulse-glow{0%,100%{transform:scale(1);box-shadow:2px 2px 0 #808080;}50%{transform:scale(1.05);box-shadow:0 0 8px 2px rgba(255,0,0,0.5),2px 2px 0 #808080;}}
+    @keyframes marquee-scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+    @keyframes marquee-cards{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+    /* === GROOVE HR === */
+    .hr-groove{border:none;height:4px;background:linear-gradient(to bottom,#808080 0%,#808080 50%,#ffffff 50%,#ffffff 100%);margin:0;}
+
+    /* === BEVEL CLASSES === */
+    .bevel-out{border:2px solid;border-color:#ffffff #808080 #808080 #ffffff;box-shadow:inset -1px -1px 0 #404040,inset 1px 1px 0 #dfdfdf;}
+    .bevel-in{border:2px solid;border-color:#808080 #ffffff #ffffff #808080;box-shadow:inset 1px 1px 0 #404040,inset -1px -1px 0 #dfdfdf;}
+
+    /* === TITLE BAR === */
+    .win-title{background:linear-gradient(to right,#000080,#1084d0);color:#ffffff;font-family:"Arial Black",Impact,sans-serif;font-weight:700;font-size:13px;padding:4px 8px;display:flex;align-items:center;gap:6px;user-select:none;}
+
+    /* === LINKS === */
+    a{color:#0000FF;text-decoration:underline;}
+    a:hover{color:#FF0000;}
+    a:visited{color:#800080;}
+
+    /* === LAYOUT === */
+    .container{max-width:1024px;margin:0 auto;padding:0 16px;}
+    .section{padding:32px 0;}
+
+    /* === BUTTONS === */
+    .btn{display:inline-block;background:#C0C0C0;color:#000000;font-family:"Arial Black",Impact,sans-serif;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:1px;padding:8px 18px;text-decoration:none;cursor:pointer;border:2px solid;border-color:#ffffff #808080 #808080 #ffffff;box-shadow:inset -1px -1px 0 #404040,inset 1px 1px 0 #dfdfdf;text-align:center;}
+    .btn:hover{background:#d0d0d0;color:#000000;text-decoration:none;}
+    .btn:active{border-color:#808080 #ffffff #ffffff #808080;box-shadow:inset 1px 1px 0 #404040,inset -1px -1px 0 #dfdfdf;transform:translate(1px,1px);}
+    .btn:focus-visible{outline:2px dotted #000000;outline-offset:2px;}
+
+    .btn-primary{background:#0000FF;color:#ffffff;border-color:#5555ff #000080 #000080 #5555ff;font-size:13px;padding:10px 24px;}
+    .btn-primary:hover{background:#2222ff;color:#ffffff;}
+    .btn-primary:active{border-color:#000080 #5555ff #5555ff #000080;}
+
+    .btn-cta{background:#FF0000;color:#ffffff;border-color:#ff5555 #800000 #800000 #ff5555;font-size:17px;padding:14px 36px;display:block;width:100%;animation:pulse-glow 1.5s ease-in-out infinite;font-family:"Arial Black",Impact,sans-serif;}
+    .btn-cta:hover{background:#cc0000;color:#ffffff;animation:none;text-decoration:none;}
+    .btn-cta:active{border-color:#800000 #ff5555 #ff5555 #800000;}
+
+    /* === MARQUEE BAR === */
+    .marquee-bar{background:#000080;color:#FFFF00;padding:6px 0;overflow:hidden;white-space:nowrap;border-top:2px solid #5555ff;border-bottom:2px solid #000040;}
+    .marquee-inner{display:inline-block;animation:marquee-scroll 25s linear infinite;font-family:"Courier New",Courier,monospace;font-size:13px;font-weight:700;}
+    .marquee-inner:hover{animation-play-state:paused;}
+
+    /* === HEADER === */
+    .site-header{background:#C0C0C0;border-bottom:2px solid;border-color:#ffffff #808080 #808080 #ffffff;padding:8px 16px;position:sticky;top:0;z-index:100;}
+    .site-header .inner{max-width:1024px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;}
+    .logo img{height:40px;}
+
+    /* === PROMO BAR === */
+    .promo-bar{background:#FFFFCC;border-bottom:2px solid #808080;padding:10px 16px;text-align:center;}
+    .promo-title{font-family:"Arial Black",sans-serif;font-weight:900;font-size:14px;margin-bottom:8px;}
+    .gift-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;}
+    .gift-pill{background:#ffffff;border:2px solid;border-color:#ffffff #808080 #808080 #ffffff;padding:4px 12px;font-size:12px;font-family:"Courier New",monospace;display:flex;align-items:center;gap:6px;}
+    .gift-pill .old-price{text-decoration:line-through;color:#808080;}
+    .gift-pill .free{color:#FF0000;font-weight:700;}
+
+    /* === NEW BADGE === */
+    .new-badge{display:inline-block;background:#FF0000;color:#FFFF00;font-family:"Arial Black",Impact,sans-serif;font-weight:900;font-size:11px;padding:2px 7px;border:2px solid #800000;animation:pulse-glow 1.5s ease-in-out infinite;}
+
+    /* === HERO === */
+    .hero-section{background:#C0C0C0;padding:20px 0;}
+    .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+    @media(max-width:768px){.hero-grid{grid-template-columns:1fr;}}
+
+    .win-card{background:#C0C0C0;border:2px solid;border-color:#ffffff #808080 #808080 #ffffff;box-shadow:inset -1px -1px 0 #404040,inset 1px 1px 0 #dfdfdf;}
+    .win-card-pad{padding:8px;}
+
+    /* product images */
+    .main-img-wrap{border:2px solid;border-color:#808080 #ffffff #ffffff #808080;background:#ffffff;overflow:hidden;}
+    .main-img-wrap img{width:100%;}
+    .thumb-row{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-top:4px;}
+    .thumb-row img{cursor:pointer;border:2px solid #808080;width:100%;}
+    .thumb-row img:hover{border-color:#0000FF;}
+
+    /* hit counter */
+    .hit-counter{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;margin:10px 0;}
+    @media(max-width:500px){.hit-counter{grid-template-columns:repeat(2,1fr);}}
+    .counter-cell{background:#000000;border:2px solid;border-color:#808080 #ffffff #ffffff #808080;padding:8px 4px;text-align:center;}
+    .counter-num{font-family:"Courier New",Courier,monospace;font-size:1.3rem;font-weight:700;color:#00FF00;display:block;}
+    .counter-label{font-family:"Courier New",Courier,monospace;font-size:10px;color:#00AA00;text-transform:uppercase;letter-spacing:1px;}
+
+    /* features table */
+    .features-table{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:10px 0;border:2px solid #808080;}
+    @media(max-width:500px){.features-table{grid-template-columns:repeat(2,1fr);}}
+    .feature-cell{background:#ffffff;border:1px solid #C0C0C0;padding:7px 5px;text-align:center;font-size:11px;font-weight:700;}
+    .feature-cell:nth-child(even){background:#E8E8E8;}
+
+    /* price */
+    .price-area{background:#FFFFCC;border:2px solid;border-color:#808080 #ffffff #ffffff #808080;padding:10px 12px;margin:10px 0;display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+    .price-current{font-family:"Arial Black",Impact,sans-serif;font-size:2.2rem;font-weight:900;color:#FF0000;}
+    .price-old{font-size:1rem;text-decoration:line-through;color:#808080;font-family:"Courier New",monospace;}
+    .badge-save{background:#FFFF00;color:#000000;font-weight:900;font-size:11px;padding:3px 8px;border:2px solid #000000;font-family:"Arial Black",sans-serif;}
+    .guarantee-bar{background:#FFFF00;border:2px solid #000000;padding:6px 10px;font-weight:700;font-size:13px;text-align:center;margin:8px 0;}
+    .trust-line{background:#ffffff;border:1px solid #808080;padding:4px 8px;font-family:"Courier New",monospace;font-size:11px;text-align:center;margin-top:8px;}
+
+    /* rainbow text */
+    .rainbow-text{animation:rainbow 4s linear infinite;}
+
+    /* section headers */
+    .section-win{background:#C0C0C0;border:2px solid;border-color:#ffffff #808080 #808080 #ffffff;margin-bottom:14px;}
+    .section-title-text{font-family:"Arial Black",Impact,Haettenschweiler,sans-serif;font-size:clamp(1.3rem,3vw,1.9rem);font-weight:900;text-transform:uppercase;text-shadow:2px 2px 0 #808080;padding:8px 12px 6px;}
+    .section-subtitle{font-size:13px;color:#000000;padding:6px 12px;background:#FFFFCC;border-top:1px solid #808080;}
+
+    /* eyebrow tag */
+    .eyebrow-tag{display:inline-block;background:#000080;color:#FFFF00;font-family:"Arial Black",sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;padding:2px 10px;letter-spacing:1px;border:2px solid;border-color:#5555ff #000040 #000040 #5555ff;}
+
+    /* choose note */
+    .choose-note{background:#FFFF00;border:2px solid #000000;padding:7px 16px;font-weight:700;font-size:13px;text-align:center;margin:12px auto;max-width:380px;display:block;}
+
+    /* === SOCIAL === */
+    .social-section{background:#000080;padding:16px;text-align:center;}
+    .social-label{color:#FFFF00;font-family:"Arial Black",sans-serif;font-weight:700;font-size:13px;text-transform:uppercase;margin-bottom:10px;}
+    .social-pills{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;}
+    .social-pill{display:flex;align-items:center;gap:6px;background:#C0C0C0;border:2px solid;border-color:#ffffff #808080 #808080 #ffffff;padding:6px 14px;color:#000000;text-decoration:none;font-weight:700;font-size:13px;font-family:"Arial Black",sans-serif;}
+    .social-pill:hover{background:#d0d0d0;color:#000000;text-decoration:none;}
+    .social-pill img{width:18px;height:18px;}
+
+    /* === MINI FAQ === */
+    .mini-faq{background:#C0C0C0;padding:16px 0;}
+    .mini-faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+    @media(max-width:600px){.mini-faq-grid{grid-template-columns:1fr;}}
+    .faq-win-card{background:#C0C0C0;border:2px solid;border-color:#ffffff #808080 #808080 #ffffff;}
+    .faq-q{padding:8px 10px;font-weight:700;font-size:13px;border-bottom:1px solid #808080;background:linear-gradient(to right,#000080,#1084d0);color:#ffffff;}
+    .faq-a{padding:8px 10px;font-size:13px;background:#ffffff;border:2px solid;border-color:#808080 #ffffff #ffffff #808080;margin:4px;line-height:1.6;}
+
+    /* === BONUSES === */
+    .bonuses-section{background:#C0C0C0;padding:32px 0;}
+    .bonuses-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+    @media(max-width:768px){.bonuses-grid{grid-template-columns:1fr;}}
+    .bonus-card{background:#C0C0C0;border:2px solid;border-color:#ffffff #808080 #808080 #ffffff;}
+    .bonus-card-img{background:#ffffff;border:2px solid;border-color:#808080 #ffffff #ffffff #808080;margin:4px;overflow:hidden;}
+    .bonus-card-img img{width:100%;height:170px;object-fit:contain;padding:12px;}
+    .bonus-card-body{padding:10px;}
+    .bonus-tag{display:inline-block;background:#000080;color:#ffffff;font-size:11px;font-weight:700;padding:2px 8px;margin-bottom:6px;font-family:"Arial Black",sans-serif;}
+    .bonus-card-body h3{font-size:14px;font-weight:700;margin-bottom:4px;}
+    .bonus-card-body p{font-size:12px;color:#000000;margin-bottom:8px;line-height:1.4;}
+    .bonus-features{margin-bottom:8px;}
+    .bonus-features li{font-size:11px;display:flex;align-items:center;gap:4px;border-bottom:1px solid #E8E8E8;padding:3px 0;}
+    .bonus-features li::before{content:"✓";color:#00AA00;font-weight:700;}
+    .bonus-price-row{display:flex;align-items:center;gap:8px;}
+    .bonus-price-row .free{font-weight:900;font-size:1rem;color:#00AA00;font-family:"Arial Black",sans-serif;}
+    .bonus-price-row .was{font-size:11px;color:#808080;text-decoration:line-through;font-family:"Courier New",monospace;}
+
+    /* === REVIEWS === */
+    .reviews-section{background:#000080;padding:32px 0;overflow:hidden;}
+    .reviews-track-wrapper{overflow:hidden;position:relative;}
+    .reviews-track{display:flex;gap:10px;animation:marquee-cards 40s linear infinite;width:max-content;}
+    .reviews-track:hover{animation-play-state:paused;}
+    .review-card{flex-shrink:0;width:240px;border:2px solid;border-color:#ffffff #808080 #808080 #ffffff;}
+    .review-card img{width:100%;}
+    .trustpilot-bar{display:inline-flex;align-items:center;gap:12px;background:#FFFFCC;border:2px solid #000000;padding:8px 18px;margin-bottom:16px;}
+    .stars{color:#00AA00;font-size:1.2rem;}
+
+    /* === COMPARISON === */
+    .comparison-section{background:#C0C0C0;padding:32px 0;}
+    .comparison-wrapper{overflow-x:auto;border:2px solid;border-color:#808080 #ffffff #ffffff #808080;}
+    table{width:100%;border-collapse:collapse;min-width:500px;}
+    thead th{padding:10px 12px;text-align:left;font-family:"Arial Black",sans-serif;font-size:12px;font-weight:900;text-transform:uppercase;border-bottom:2px solid #808080;border-right:1px solid #808080;}
+    thead th:first-child{background:#C0C0C0;}
+    thead th:nth-child(2){background:linear-gradient(to right,#000080,#1084d0);color:#ffffff;text-align:center;}
+    thead th:nth-child(3){background:#808080;color:#ffffff;text-align:center;}
+    tbody tr{border-bottom:1px solid #808080;}
+    tbody tr:nth-child(odd) td{background:#ffffff;}
+    tbody tr:nth-child(even) td{background:#E8E8E8;}
+    tbody td{padding:8px 12px;font-size:13px;border-right:1px solid #C0C0C0;}
+    tbody td:nth-child(2){text-align:center;background:#FFFFCC !important;}
+    tbody td:nth-child(3){text-align:center;}
+    .check{color:#00AA00;font-weight:700;}
+    .cross{color:#FF0000;}
+    .comparison-footer{margin-top:12px;background:#FFFFCC;border:2px solid #000000;padding:16px;text-align:center;}
+
+    /* === CATEGORIES === */
+    .inside-section{background:#C0C0C0;padding:32px 0;}
+    .categories-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:2px solid #808080;}
+    @media(max-width:900px){.categories-grid{grid-template-columns:repeat(3,1fr);}}
+    @media(max-width:600px){.categories-grid{grid-template-columns:repeat(2,1fr);}}
+    .category-card{background:#ffffff;border:1px solid #808080;}
+    .category-card:nth-child(even){background:#E8E8E8;}
+    .category-card img{width:100%;height:110px;object-fit:cover;border-bottom:1px solid #808080;}
+    .category-card-body{padding:6px 8px;}
+    .category-card-body h4{font-size:11px;font-weight:700;text-transform:uppercase;margin-bottom:2px;}
+    .category-card-body p{font-size:10px;color:#404040;line-height:1.3;}
+
+    /* === FAQ === */
+    .faq-section{background:#C0C0C0;padding:32px 0;}
+    .faq-list{max-width:780px;margin:0 auto;display:flex;flex-direction:column;gap:3px;}
+    details.faq-item{background:#C0C0C0;border:2px solid;border-color:#ffffff #808080 #808080 #ffffff;}
+    details.faq-item[open]{border-color:#808080 #ffffff #ffffff #808080;}
+    details.faq-item summary{padding:9px 12px;font-weight:700;font-size:13px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:10px;background:linear-gradient(to right,#000080,#1084d0);color:#ffffff;}
+    details.faq-item summary::after{content:"[+]";font-family:"Courier New",monospace;font-size:13px;color:#FFFF00;flex-shrink:0;}
+    details.faq-item[open] summary::after{content:"[-]";}
+    details.faq-item summary::-webkit-details-marker{display:none;}
+    .faq-answer{padding:12px 14px;font-size:13px;line-height:1.7;background:#FFFFCC;border:2px solid;border-color:#808080 #ffffff #ffffff #808080;margin:4px;}
+
+    /* === FINAL CTA (construction stripes) === */
+    .final-cta{background:repeating-linear-gradient(45deg,#ffff00,#ffff00 10px,#000000 10px,#000000 20px);padding:48px 20px;text-align:center;}
+    .final-cta-inner{background:#C0C0C0;border:4px solid;border-color:#ffffff #808080 #808080 #ffffff;box-shadow:inset -2px -2px 0 #404040,inset 2px 2px 0 #dfdfdf;max-width:600px;margin:0 auto;padding:32px;}
+    .final-cta h2{font-family:"Arial Black",Impact,sans-serif;font-size:clamp(1.3rem,4vw,1.9rem);font-weight:900;text-transform:uppercase;text-shadow:2px 2px 0 #808080;margin-bottom:12px;}
+    .final-cta p{font-size:14px;margin-bottom:20px;color:#000000;}
+    .trust-note{margin-top:12px;font-size:11px;font-family:"Courier New",Courier,monospace;color:#000000;}
+
+    /* === FOOTER === */
+    footer{background:#000080;border-top:4px solid;border-color:#5555ff #000040 #000040 #5555ff;padding:20px;text-align:center;}
+    footer .footer-logo img{height:32px;margin:0 auto 10px;}
+    footer p{font-size:12px;color:#ffffff;font-family:"Courier New",Courier,monospace;}
+    footer .footer-links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin:10px 0;}
+    footer .footer-links a{font-size:12px;color:#FFFF00;}
+    footer .footer-links a:hover{color:#FF0000;}
+
+    /* === REDUCED MOTION === */
+    @media(prefers-reduced-motion:reduce){
+      .rainbow-text{animation:none;color:#FF0000;}
+      .marquee-inner{animation:none;}
+      .reviews-track{animation:none;}
+      .btn-cta{animation:none;}
+      .new-badge{animation:none;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- MARQUEE TOP BAR -->
+<div class="marquee-bar" aria-hidden="true">
+  <span class="marquee-inner">
+    ⭐ ALL-IN-ONE STL BUNDLE &nbsp;★&nbsp; 500,000+ FILES &nbsp;★&nbsp; COMMERCIAL LICENSE INCLUDED &nbsp;★&nbsp; INSTANT DOWNLOAD &nbsp;★&nbsp; 3 FREE GIFTS TODAY ONLY &nbsp;★&nbsp; 24 CATEGORIES &nbsp;★&nbsp; TESTED ON 12+ PRINTERS &nbsp;★&nbsp; ONLY $27.99 &nbsp;★&nbsp; 30-DAY MONEY-BACK GUARANTEE &nbsp;★&nbsp; ALL-IN-ONE STL BUNDLE &nbsp;★&nbsp; 500,000+ FILES &nbsp;★&nbsp; COMMERCIAL LICENSE INCLUDED &nbsp;★&nbsp; INSTANT DOWNLOAD &nbsp;★&nbsp; 3 FREE GIFTS TODAY ONLY &nbsp;★&nbsp; 24 CATEGORIES &nbsp;★&nbsp; TESTED ON 12+ PRINTERS &nbsp;★&nbsp; ONLY $27.99 &nbsp;★&nbsp; 30-DAY MONEY-BACK GUARANTEE &nbsp;★&nbsp;
+  </span>
+</div>
+
+<!-- PROMO BAR -->
+<div class="promo-bar">
+  <div class="promo-title">
+    <span class="new-badge">★ EXCLUSIVE ★</span>
+    &nbsp; Order today and claim 2 irresistible gifts —
+    <span style="color:#FF0000;font-weight:900;">YOURS FREE!</span>
+  </div>
+  <div class="gift-pills">
+    <div class="gift-pill">🛠️ Ultimate Tool Kit <span class="old-price">$29.99</span> <span class="free">FREE</span></div>
+    <div class="gift-pill">📦 Labubu Bundle <span class="old-price">$19.99</span> <span class="free">FREE</span></div>
+    <div class="gift-pill">🖱️ Clickers Bundle <span class="old-price">$19.99</span> <span class="free">FREE</span></div>
+  </div>
+</div>
+<div class="hr-groove"></div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="inner">
+    <div class="logo">
+      <span style="font-family:'Arial Black',Impact,sans-serif;font-weight:900;font-size:20px;letter-spacing:1px;">⬡ Bitscrafts</span>
+    </div>
+    <a href="#buy" class="btn btn-primary">▶ DOWNLOAD NOW</a>
+  </div>
+</header>
+<div class="hr-groove"></div>
+
+<!-- HERO -->
+<section class="hero-section">
+  <div class="container">
+    <div class="hero-grid">
+
+      <!-- Images -->
+      <div class="win-card">
+        <div class="win-title">📁 Product Preview</div>
+        <div class="win-card-pad">
+          <div class="main-img-wrap">
+            <img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/BitsCrafts_STL_BUNDLE.svg" alt="All-in-One STL Bundle" id="mainImg">
+          </div>
+          <div class="thumb-row">
+            <img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/BitsCrafts_STL_BUNDLE.svg" alt="" onclick="document.getElementById('mainImg').src=this.src">
+            <img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/group_11.svg" alt="" onclick="document.getElementById('mainImg').src=this.src">
+            <img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/BitsCrafts_STL_BUNDLE_11.svg" alt="" onclick="document.getElementById('mainImg').src=this.src">
+          </div>
+        </div>
+      </div>
+
+      <!-- Info -->
+      <div class="win-card">
+        <div class="win-title">
+          <span class="new-badge" style="font-size:10px;padding:1px 5px;animation:none;">NEW</span>
+          &nbsp;All-in-One STL Bundle — Bitscrafts
+        </div>
+        <div class="win-card-pad">
+          <h1 style="font-family:'Arial Black',Impact,sans-serif;font-size:clamp(1.5rem,4vw,2.2rem);font-weight:900;line-height:1.1;margin-bottom:8px;text-transform:uppercase;text-shadow:2px 2px 0 #808080;">
+            All-in-One <span class="rainbow-text">STL Bundle</span>
+          </h1>
+
+          <div class="hr-groove" style="margin:8px 0;"></div>
+
+          <!-- Hit Counter Stats -->
+          <div class="hit-counter">
+            <div class="counter-cell"><span class="counter-num">500K+</span><span class="counter-label">STL Files</span></div>
+            <div class="counter-cell"><span class="counter-num">24</span><span class="counter-label">Categories</span></div>
+            <div class="counter-cell"><span class="counter-num">12+</span><span class="counter-label">Printers</span></div>
+            <div class="counter-cell"><span class="counter-num">4.9★</span><span class="counter-label">Rating</span></div>
+          </div>
+
+          <!-- Features -->
+          <div class="features-table">
+            <div class="feature-cell">⚡ Instant Download</div>
+            <div class="feature-cell">📁 STL · OBJ · 3MF</div>
+            <div class="feature-cell">🛡️ Tested Files</div>
+            <div class="feature-cell">♾️ Lifetime Access</div>
+            <div class="feature-cell">💼 Commercial License</div>
+            <div class="feature-cell">💬 Expert Support</div>
+          </div>
+
+          <div class="guarantee-bar">🛡️ Zero print failures guaranteed</div>
+
+          <!-- Price -->
+          <div class="price-area">
+            <span class="price-current">$27.99</span>
+            <span class="price-old">$99.99</span>
+            <span class="badge-save">-72% OFF</span>
+          </div>
+
+          <!-- CTA -->
+          <a href="#CHECKOUT_LINK" class="btn btn-cta" id="buy">🚀 DOWNLOAD + FREE GIFTS</a>
+
+          <div class="trust-line">🔒 Secure payment &nbsp;·&nbsp; 30-day guarantee &nbsp;·&nbsp; Instant delivery</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<div class="hr-groove"></div>
+
+<!-- SOCIAL -->
+<div class="social-section">
+  <div class="social-label">★ Follow Us ★</div>
+  <div class="social-pills">
+    <a href="#" class="social-pill"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/instagram.svg" alt="Instagram"> Instagram</a>
+    <a href="#" class="social-pill"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/tiktok.svg" alt="TikTok"> TikTok</a>
+  </div>
+</div>
+<div class="hr-groove"></div>
+
+<!-- MINI FAQ -->
+<div class="mini-faq">
+  <div class="container">
+    <div class="mini-faq-grid">
+      <div class="faq-win-card">
+        <div class="faq-q">⚡ How long until I can start printing?</div>
+        <div class="faq-a">Instant access via secure download link — start printing within minutes of purchase. Your Google Drive link is delivered immediately after checkout.</div>
+      </div>
+      <div class="faq-win-card">
+        <div class="faq-q">⚡ Can I sell what I print?</div>
+        <div class="faq-a">Absolutely. Full commercial license included — print, sell and keep 100% of your profits. No royalties, no restrictions, ever.</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="hr-groove"></div>
+
+<!-- BONUSES -->
+<section class="bonuses-section section">
+  <div class="container">
+    <div class="section-win">
+      <div class="win-title">🎁 Exclusive Bonuses</div>
+      <div class="section-title-text">Choose <span class="rainbow-text">2 Free Gifts</span></div>
+      <div class="section-subtitle">Included with every purchase — pick your 2 favorites to keep forever</div>
+    </div>
+    <div class="choose-note">🎯 Choose 2 of the 3 gifts below</div>
+
+    <div class="bonuses-grid">
+      <div class="bonus-card">
+        <div class="win-title">🛠️ Gift #1</div>
+        <div class="bonus-card-img"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/BitsCrafts_Toolkit_SV.svg" alt="Ultimate 3D Printing Tool Kit"></div>
+        <div class="bonus-card-body">
+          <div class="bonus-tag">TOOL KIT</div>
+          <h3>Ultimate 3D Printing Tool Kit</h3>
+          <p>Excel spreadsheets and pro tools for smarter printing</p>
+          <ul class="bonus-features"><li>Excel Spreadsheets</li><li>Print Calculators</li><li>Instant Access</li></ul>
+          <div class="bonus-price-row"><span class="free">FREE</span><span class="was">was $29.99</span></div>
+        </div>
+      </div>
+      <div class="bonus-card">
+        <div class="win-title">📦 Gift #2</div>
+        <div class="bonus-card-img"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/Labubu_Characters.png" alt="Labubu Bundle"></div>
+        <div class="bonus-card-body">
+          <div class="bonus-tag">STL PACK</div>
+          <h3>Labubu Bundle</h3>
+          <p>Trending viral characters — print and sell</p>
+          <ul class="bonus-features"><li>Viral Characters</li><li>High market demand</li><li>Commercial License</li></ul>
+          <div class="bonus-price-row"><span class="free">FREE</span><span class="was">was $19.99</span></div>
+        </div>
+      </div>
+      <div class="bonus-card">
+        <div class="win-title">🖱️ Gift #3</div>
+        <div class="bonus-card-img"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/imgi_45_iap_800x800.6753142079_ftnnwyqd.webp" alt="Clickers Bundle"></div>
+        <div class="bonus-card-body">
+          <div class="bonus-tag">STL PACK</div>
+          <h3>Clickers Bundle</h3>
+          <p>Cute collectible designs — guaranteed bestsellers</p>
+          <ul class="bonus-features"><li>Exclusive Designs</li><li>Proven Bestsellers</li><li>Commercial License</li></ul>
+          <div class="bonus-price-row"><span class="free">FREE</span><span class="was">was $19.99</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:20px;">
+      <a href="#CHECKOUT_LINK" class="btn btn-cta" style="max-width:480px;display:inline-block;width:auto;padding:14px 36px;">🚀 BUY NOW &amp; CHOOSE MY FREE GIFTS</a>
+    </div>
+  </div>
+</section>
+<div class="hr-groove"></div>
+
+<!-- REVIEWS -->
+<section class="reviews-section">
+  <div class="container" style="margin-bottom:16px;">
+    <div class="section-win">
+      <div class="win-title">⭐ Reviews</div>
+      <div class="section-title-text" style="color:#FFFF00;text-shadow:2px 2px 0 #000080;">What Our <span class="rainbow-text">Customers Say</span></div>
+    </div>
+    <div style="text-align:center;">
+      <div class="trustpilot-bar">
+        <div class="stars">★★★★★</div>
+        <div style="font-family:'Arial Black',sans-serif;font-weight:900;font-size:1.1rem;">4.9</div>
+        <div style="font-size:13px;font-weight:700;">Excellent</div>
+      </div>
+    </div>
+  </div>
+  <div class="reviews-track-wrapper">
+    <div class="reviews-track">
+      <div class="review-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/1.svg" alt="Review 1" loading="lazy"></div>
+      <div class="review-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/2.svg" alt="Review 2" loading="lazy"></div>
+      <div class="review-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/3.svg" alt="Review 3" loading="lazy"></div>
+      <div class="review-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/4.svg" alt="Review 4" loading="lazy"></div>
+      <div class="review-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/5.svg" alt="Review 5" loading="lazy"></div>
+      <div class="review-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/6.svg" alt="Review 6" loading="lazy"></div>
+      <div class="review-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/7.svg" alt="Review 7" loading="lazy"></div>
+      <div class="review-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/8.svg" alt="Review 8" loading="lazy"></div>
+      <div class="review-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/9.svg" alt="Review 9" loading="lazy"></div>
+      <div class="review-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/10.svg" alt="Review 10" loading="lazy"></div>
+      <div class="review-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/1.svg" alt="" loading="lazy"></div>
+      <div class="review-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/2.svg" alt="" loading="lazy"></div>
+      <div class="review-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/3.svg" alt="" loading="lazy"></div>
+      <div class="review-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/4.svg" alt="" loading="lazy"></div>
+      <div class="review-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/5.svg" alt="" loading="lazy"></div>
+      <div class="review-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/6.svg" alt="" loading="lazy"></div>
+      <div class="review-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/7.svg" alt="" loading="lazy"></div>
+      <div class="review-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/8.svg" alt="" loading="lazy"></div>
+      <div class="review-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/9.svg" alt="" loading="lazy"></div>
+      <div class="review-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/10.svg" alt="" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+<div class="hr-groove"></div>
+
+<!-- COMPARISON -->
+<section class="comparison-section section">
+  <div class="container">
+    <div class="section-win">
+      <div class="win-title">⚡ Comparison</div>
+      <div class="section-title-text">Why Choose <span class="rainbow-text">Our Bundle</span></div>
+      <div class="section-subtitle">Compare what matters most when buying 3D printing files</div>
+    </div>
+    <div class="comparison-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>What You Get</th>
+            <th>⭐ Our Bundle</th>
+            <th>Individual Purchases</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>🖨️ File Quality</td><td><span class="check">✓</span> Pre-tested on 12+ printers</td><td><span class="cross">✗</span> Uncertain quality</td></tr>
+          <tr><td>🛠️ Print Support</td><td><span class="check">✓</span> Settings guide included</td><td><span class="cross">✗</span> Figure it out yourself</td></tr>
+          <tr><td>💵 Total Cost</td><td><span class="check">✓</span> $27.99 for everything</td><td><span class="cross">✗</span> $313.96+ individually</td></tr>
+          <tr><td>📁 File Formats</td><td><span class="check">✓</span> STL, OBJ &amp; 3MF</td><td><span class="cross">✗</span> Usually STL only</td></tr>
+          <tr><td>💼 Commercial Use</td><td><span class="check">✓</span> Full license included</td><td><span class="cross">✗</span> Often personal use only</td></tr>
+          <tr><td>🎓 Free Bonuses</td><td><span class="check">✓</span> 3 gifts worth $213.97</td><td><span class="cross">✗</span> No bonuses included</td></tr>
+          <tr><td>💬 Customer Support</td><td><span class="check">✓</span> 24h response guaranteed</td><td><span class="cross">✗</span> Limited or no support</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="comparison-footer">
+      <p style="font-size:14px;margin-bottom:6px;">More quality, support and value in one bundle than buying separately</p>
+      <p style="font-size:14px;font-weight:700;margin-bottom:10px;"><strong>Save $284.26</strong> — every resource you need, all in one place</p>
+      <span style="display:inline-block;background:#FFFF00;border:2px solid #000000;padding:4px 14px;font-weight:700;font-size:13px;">🛡️ 30-Day Risk-Free Guarantee</span>
+    </div>
+  </div>
+</section>
+<div class="hr-groove"></div>
+
+<!-- WHAT'S INSIDE -->
+<section class="inside-section section">
+  <div class="container">
+    <div class="section-win">
+      <div class="win-title">📦 24 Categories</div>
+      <div class="section-title-text">What's <span class="rainbow-text">Inside the Bundle</span></div>
+      <div class="section-subtitle">500,000+ files organized in 24 print-ready categories</div>
+    </div>
+    <div class="categories-grid">
+      <div class="category-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/Anime.png" alt="Anime Pack" loading="lazy"><div class="category-card-body"><h4>Anime Pack</h4><p>Beloved characters from the most popular anime franchises.</p></div></div>
+      <div class="category-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/Miniatures.png" alt="Fantasy Miniatures" loading="lazy"><div class="category-card-body"><h4>Fantasy Miniatures</h4><p>Hundreds of premium fantasy and sci-fi figures.</p></div></div>
+      <div class="category-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/Star_wars.png" alt="Star Wars Models" loading="lazy"><div class="category-card-body"><h4>Star Wars Models</h4><p>Detailed models inspired by legendary space adventures.</p></div></div>
+      <div class="category-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/Animals.png" alt="Animal Kingdom" loading="lazy"><div class="category-card-body"><h4>Animal Kingdom</h4><p>Beautifully sculpted animals — real and mythical.</p></div></div>
+      <div class="category-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/gaming_figures.png" alt="Gaming Figures" loading="lazy"><div class="category-card-body"><h4>Gaming Figures</h4><p>Iconic characters from the world's most famous games.</p></div></div>
+      <div class="category-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/Movie_llegneds.png" alt="Movie Legends" loading="lazy"><div class="category-card-body"><h4>Movie Legends</h4><p>Your favorite cinematic icons brought to life in 3D.</p></div></div>
+      <div class="category-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/Tools_3.png" alt="Tools STL" loading="lazy"><div class="category-card-body"><h4>Tools STL</h4><p>Functional and decorative tool models.</p></div></div>
+      <div class="category-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/golden.png" alt="Elite Vault" loading="lazy"><div class="category-card-body"><h4>Elite Vault</h4><p>500+ GB of exclusive premium models in one collection.</p></div></div>
+      <div class="category-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/veehicles.png" alt="Vehicles" loading="lazy"><div class="category-card-body"><h4>Vehicles &amp; Machines</h4><p>Cars, motorcycles and heavy machinery with stunning detail.</p></div></div>
+      <div class="category-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/Jewelry.png" alt="Jewelry" loading="lazy"><div class="category-card-body"><h4>Jewelry</h4><p>Rings, pendants and elegant accessories ready to print.</p></div></div>
+      <div class="category-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/scary_masks.png" alt="Scary Masks" loading="lazy"><div class="category-card-body"><h4>Scary Masks</h4><p>Scary masks for costumes and displays.</p></div></div>
+      <div class="category-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/keychains.png" alt="Keychains" loading="lazy"><div class="category-card-body"><h4>Keychains</h4><p>Fun keychain designs for quick prints.</p></div></div>
+      <div class="category-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/home_decor.png" alt="Home Decor" loading="lazy"><div class="category-card-body"><h4>Home Decor</h4><p>Elegant decorative prints for any room.</p></div></div>
+      <div class="category-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/building.png" alt="Architecture" loading="lazy"><div class="category-card-body"><h4>Architectural</h4><p>Detailed architecture — from ancient ruins to modern structures.</p></div></div>
+      <div class="category-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/Planters.png" alt="Planters" loading="lazy"><div class="category-card-body"><h4>Planters</h4><p>Unique pots and stands for indoor and outdoor decor.</p></div></div>
+      <div class="category-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/Halloween.svg" alt="Halloween" loading="lazy"><div class="category-card-body"><h4>Halloween</h4><p>Spooky prints for the darkest time of year.</p></div></div>
+      <div class="category-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/candleholders.png" alt="Candle Holders" loading="lazy"><div class="category-card-body"><h4>Candle Holders</h4><p>Modern, rustic and artistic candle holder designs.</p></div></div>
+      <div class="category-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/booknook.png" alt="Book Nook" loading="lazy"><div class="category-card-body"><h4>Book Nook</h4><p>Stunning miniature inserts for your bookshelf.</p></div></div>
+      <div class="category-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/ArticulatedFlexiDragon_1.png" alt="Flexi Dragons" loading="lazy"><div class="category-card-body"><h4>Flexi Dragons</h4><p>Articulated flexi dragons — print-in-place.</p></div></div>
+      <div class="category-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/Valentine_s_Day.png" alt="Valentine's Day" loading="lazy"><div class="category-card-body"><h4>Valentine's Day</h4><p>Romantic gifts and heartfelt prints for loved ones.</p></div></div>
+      <div class="category-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/Headphone_Stand.png" alt="Headphone Stands" loading="lazy"><div class="category-card-body"><h4>Headphone Stands</h4><p>Clean and functional stands to display your headphones.</p></div></div>
+      <div class="category-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/EpicDioramas.png" alt="Epic Dioramas" loading="lazy"><div class="category-card-body"><h4>Epic Dioramas</h4><p>Immersive dioramas for collectors and displays.</p></div></div>
+      <div class="category-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/KitchenTools.png" alt="Kitchen Tools" loading="lazy"><div class="category-card-body"><h4>Kitchen Tools</h4><p>Functional and decorative kitchen tools ready to print.</p></div></div>
+      <div class="category-card"><img src="https://raw.githubusercontent.com/wlsaffiliatebr-code/pagina-pack-3dprint/main/images/imgi_54_iap_800x800.6296881918_f5gaarin.webp" alt="More" loading="lazy"><div class="category-card-body"><h4>And much more...</h4><p>New categories added regularly.</p></div></div>
+    </div>
+  </div>
+</section>
+<div class="hr-groove"></div>
+
+<!-- FAQ -->
+<section class="faq-section section">
+  <div class="container">
+    <div class="section-win">
+      <div class="win-title">❓ FAQ</div>
+      <div class="section-title-text">Frequently <span class="rainbow-text">Asked Questions</span></div>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>What happens immediately after my purchase?</summary>
+        <div class="faq-answer">You get instant access to 500K+ STL files, a business guide and commercial license via a secure Google Drive link. No waiting — start downloading and printing within minutes of purchase.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Is this bundle worth the price?</summary>
+        <div class="faq-answer">Individual STL files typically cost $5–15 each. You get 500K+ files plus business training — that's over $2.5M in value for a fraction of the cost. Most customers recoup their investment within 2–4 weeks.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Can I really make $2,000+ per month with this?</summary>
+        <div class="faq-answer">Our customers regularly earn $25–80 profit per printed item. Selling just 2–3 items per day adds up to $2,000+ monthly. The included business guide shows exactly how to reach those results.</div>
+      </details>
+      <details class="faq-item">
+        <summary>What if I don't make money with these files?</summary>
+        <div class="faq-answer">We offer a 30-day money-back guarantee. If you follow our business guide and don't see results, we'll refund your purchase in full. We're confident in this bundle's earning potential.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Can I legally sell prints made from these files?</summary>
+        <div class="faq-answer">Yes — full commercial license included with your purchase. Sell unlimited prints online, at markets or to local customers. No royalties, no restrictions — you keep 100% of your profits.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Won't many people have the same files?</summary>
+        <div class="faq-answer">With 500K+ designs, you can always find unique items for your market. Success comes from execution, customer service and marketing — not just the files.</div>
+      </details>
+    </div>
+    <p style="text-align:center;margin-top:20px;font-size:13px;">Still have questions? <a href="#">We're here to help.</a></p>
+  </div>
+</section>
+<div class="hr-groove"></div>
+
+<!-- FINAL CTA — construction stripes -->
+<section class="final-cta">
+  <div class="final-cta-inner">
+    <div class="eyebrow-tag" style="margin-bottom:14px;">🔥 LIMITED OFFER</div>
+    <h2>Ready to <span class="rainbow-text">Start Printing</span> &amp; Profiting?</h2>
+    <p>Join thousands of satisfied customers. Instant access. 30-day guarantee.</p>
+    <a href="#CHECKOUT_LINK" class="btn btn-cta" style="max-width:480px;margin:0 auto;display:block;">🚀 GET THE BUNDLE NOW — $27.99</a>
+    <div class="trust-note">🔒 100% Secure payment &nbsp;·&nbsp; Instant delivery &nbsp;·&nbsp; 30-day guarantee</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <span style="font-family:'Arial Black',Impact,sans-serif;font-weight:900;font-size:18px;color:#ffffff;letter-spacing:1px;">⬡ Bitscrafts</span>
+  </div>
+  <div class="footer-links">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms of Use</a>
+    <a href="#">Contact</a>
+    <a href="#">Refund Policy</a>
+  </div>
+  <p>© 2025 Bitscrafts. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
